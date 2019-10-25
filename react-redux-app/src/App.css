@@ -2,21 +2,36 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.youtube-logo {
+  width: 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.results-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 60px 0;
 }
 
-.App-link {
-  color: #09d3ac;
+.youtube-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60vw;
+  border-bottom: 1px solid gray;
+}
+
+.video-thumbnail {
+  border-radius: 10px;
+}
+
+.video-text {
+  width: 80%;
+  text-align: justify;
+}
+
+.form-container .input {
+  border-radius: 5px;
+  width: 300px;
 }
