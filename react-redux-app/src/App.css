@@ -31,7 +31,23 @@
   text-align: justify;
 }
 
-.form-container .input {
+.form-container .form-input {
+  border: 1px solid gray;
   border-radius: 5px;
   width: 300px;
+  padding: 5px;
+}
+
+.form-container .form-button {
+  width: 100px;
+  padding: 5px;
+  background: transparent;
+  margin: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.form-container .form-button:hover {
+  cursor: pointer;
+  box-shadow: 0 .25rem .5rem rgba(0,0,0,.2);
 }

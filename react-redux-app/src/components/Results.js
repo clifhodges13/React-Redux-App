@@ -5,6 +5,11 @@ import VideoCard from './VideoCard'
 import { connect } from 'react-redux'
 
 function Results(props) {
+
+  if(props.isLoading) {
+    return <h3>Loading...</h3>
+  }
+
   return (
     <div className="results-container">
       {props.results && 
@@ -19,8 +24,7 @@ function Results(props) {
 function mapStateToProps(state) {
   return {
     results: state.results,
-    isLoading: state.isLoading,
-    error: state.error
+    isLoading: state.isLoading
   }
 }
 

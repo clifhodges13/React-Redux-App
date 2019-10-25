@@ -27,19 +27,11 @@ function SearchForm(props) {
           onChange={handleChange}
         />
       </form>
-      <button type="submit">Search</button>
+      <button className="form-button" type="submit">Search</button>
     </div>
   )
 }
 
-function mapStateToProps(state) {
-  return {
-    results: state.results,
-    isLoading: state.isLoading,
-    error: state.error
-  }
-}
-
 const mapDispatchToProps = { search };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
+export default connect(null, mapDispatchToProps)(SearchForm);
