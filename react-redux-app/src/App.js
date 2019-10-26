@@ -13,8 +13,9 @@ function App() {
     <div className="App">
       <img className="youtube-logo" src="https://image.businessinsider.com/59a59a8d79bbfd1d008b601a?width=1200&format=jpeg" alt="Youtube Logo" />
 
-      <Route path="/" component={SearchForm} />
-      <Results />
+      <SearchForm />
+
+      <Route exact path="/" component={Results} />
 
       <Route exact path="/:id" component={VideoPage} />
     </div>

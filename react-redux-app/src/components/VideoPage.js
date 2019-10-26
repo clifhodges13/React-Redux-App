@@ -1,23 +1,34 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Button from './Button'
 
-function VideoPage(props) {
+function VideoPage({ currentVid }) {
+
+  const videoId = `https://www.youtube.com/embed/${currentVid && currentVid.id.videoId}`
   
   return (
     <div>
-      {props.results && props.results[0].snippet.title}
+
+      {currentVid.snippet && 
+        <div className="video-page-container">
+          <iframe title={currentVid.snippet.title} src={videoId} className="video-page-video" />
+          <div className="video-page-text">
+            <h1>{currentVid.snippet.title}</h1>
+            <p>{currentVid.snippet.description}</p>
+          </div>
+        </div>
+      }
+
+      <Button />
+      
     </div>
   )
 }
 
 function mapStateToProps(state) {
   return {
-    results: state.results
+    currentVid: state.currentVid
   }
 }
 
-const mapDispatchToProps = {
-  // i will create another case to handle a filter and return the correct vid for this page
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(VideoPage)
+export default connect(mapStateToProps)(VideoPage)

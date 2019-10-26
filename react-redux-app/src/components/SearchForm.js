@@ -17,7 +17,7 @@ function SearchForm(props) {
   }
 
   return (
-    <div className="form-container">
+    <div className={props.isVideo ? "display-none" : "form-container"}>
       <form onSubmit={handleSubmit}>
         <input 
           className="form-input"
@@ -28,10 +28,19 @@ function SearchForm(props) {
         />
       </form>
       <button className="form-button" type="submit">Search</button>
+      <div>
+        <h1>Welcome to the Youtube Search App</h1>
+      </div>
     </div>
   )
 }
 
+function mapStateToProps(state) {
+  return {
+    isVideo: state.isVideo
+  }
+}
+
 const mapDispatchToProps = { search };
 
-export default connect(null, mapDispatchToProps)(SearchForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);

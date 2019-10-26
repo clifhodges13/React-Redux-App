@@ -1,9 +1,11 @@
-import { SEARCH_START, SEARCH_SUCCESS, SEARCH_FAIL } from '../actions'
+import { SEARCH_START, SEARCH_SUCCESS, SEARCH_FAIL, OPEN_VIDEO } from '../actions'
 
 const initialState = {
   results: null,
   isLoading: false,
-  error: null
+  error: null,
+  isVideo: false,
+  currentVid: null
 };
 
 export function reducer(state = initialState, action) {
@@ -25,6 +27,13 @@ export function reducer(state = initialState, action) {
         ...state,
         error: action.payload,
         isLoading: false
+      }
+    case OPEN_VIDEO:
+      console.log('OPEN_VIDEO called. payload: ', action.payload)
+      return {
+        ...state,
+        isVideo: true,
+        currentVid: action.payload
       }
     default:
       return state
