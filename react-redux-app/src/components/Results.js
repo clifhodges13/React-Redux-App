@@ -24,6 +24,10 @@ function Results(props) {
     )
   }
 
+  if(props.error) {
+    return <div>Something went wrong...</div>
+  }
+
   return (
     <div className="results-container">
       <img src="https://www.videoconversionexperts.com/images/film-reel.png" alt="Film Reel" className={props.results ? "display-none" : "home-image"} />
@@ -39,7 +43,8 @@ function Results(props) {
 function mapStateToProps(state) {
   return {
     results: state.results,
-    isLoading: state.isLoading
+    isLoading: state.isLoading,
+    error: state.error
   }
 }
 
